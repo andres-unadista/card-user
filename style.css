@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
+
+:root {
+  --background-color1: #ff3867;
+  --background-color2: #ffc873;
+  --background-color3: #c72ada;
+  --color-optional1: #a05d5d;
+  --color-optional2: #2d7cbf;
+  --color-optional3: #888888;
+  --width-card: 450px;
+  --height-card: 600px;
+  --width-avatar: 128px;
+  --height-avatar: 128px;
+  --width-image: 440px;
+  --height-image: 200px;
+}
+
+/* var(--background, blue) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(
+    265deg,
+    hsl(346deg 100% 61%) 0%,
+    hsl(355deg 100% 68%) 7%,
+    hsl(4deg 100% 71%) 18%,
+    hsl(12deg 100% 71%) 34%,
+    hsl(19deg 100% 72%) 53%,
+    hsl(25deg 100% 72%) 73%,
+    hsl(31deg 100% 72%) 90%,
+    hsl(36deg 100% 73%) 100%
+  );
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: var(--width-card);
+  height: var(--height-card);
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px var(--color-optional3);
+  background-color: white;
+}
+
+.card__avatar img {
+  width: var(--width-avatar);
+  height: var(--height-avatar);
+  box-sizing: content-box;
+  object-fit: cover;
+  object-position: top;
+  border: 3px var(--background-color3) solid;
+  border-radius: 50%;
+}
+
+.card__header {
+  background-image: url('./public/images/dulce-tarde.jpg');
+  height: var(--height-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 4px solid var(--background-color3);
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  height: calc(var(--height-card) - var(--height-image));
+  justify-content: space-between;
+}
+
+.card__body-footer {
+  display: flex;
+  border-top: 1px solid rgb(196, 196, 196);
+}
+
+.card__views {
+  border-right: 1px solid rgb(196, 196, 196);
+  width: 33.4%;
+  text-align: center;
+  padding: 0.5em;
+}
+
+.card__description {
+  margin: auto;
+  padding: 0 1.4em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.card__title {
+  text-align: center;
+}
+
+.card__title h1 {
+  margin-bottom: 5px;
+}
+
+.card__title span {
+  font-style: italic;
+  color: var(--color-optional1);
+}
+
+.card__button {
+  padding: 1em;
+  border: 2px solid var(--color-optional2);
+  background-color: white;
+  border-radius: 20px 20px 20px 20px;
+  width: 35%;
+  font-weight: bold;
+  margin: auto;
+  color: var(--color-optional2);
+}
+
+.card__button:hover {
+  background-color: var(--color-optional2);
+  color: white;
+  cursor: pointer;
+}
+
+.card__body-footer {
+  font-weight: normal;
+}
+
+.card__body-footer h3 {
+  font-weight: normal;
+}
+
+.card__avatar {
+  position: absolute;
+}
+
+.card__avatar img {
+  position: relative;
+  left: calc((var(--width-card) - var(--width-avatar)) / 2);
+  top: calc((var(--height-image) - var(--height-avatar)) + 1em);
+}
+
+.card__views--none {
+  border: none;
+}
